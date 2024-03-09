@@ -11,14 +11,13 @@ export const siteConfig = {
     {
       label: "Marketplace",
       href: "/marketplace",
-    },
-    {
-      label: "About",
-      href: "/about",
     }
 	],
-	navMenuItems: [
-
+	homeItems: [
+		{
+			label: "About",
+			href: "#about",
+		  }
 	],
 	links: {
 	// 	github: "https://github.com/nextui-org/nextui",

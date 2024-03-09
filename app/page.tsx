@@ -27,11 +27,12 @@ export default function Home() {
 				</Link>
 				<Link
 					className={buttonStyles({ variant: "bordered", radius: "full" })}
-					href={siteConfig.navItems[2].href}
+					href={siteConfig.homeItems[0].href}
 				>
 					About
 				</Link>
 			</div>
+			<div className="about "></div>
 
 			{/* <div className="mt-8">
 				<Snippet hideSymbol hideCopyButton variant="flat">
