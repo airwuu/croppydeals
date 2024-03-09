@@ -26,7 +26,8 @@ import {
 	SearchIcon,
 } from "@/components/icons";
 
-import { Logo } from "@/components/icons";
+// import { Logo } from "@/components/icons";
+import Logo from "../public/croppy.png";
 
 import dynamic from "next/dynamic";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -61,7 +62,7 @@ export const Navbar = () => {
 			<NavbarContent className="basis-1/5 sm:basis-full" justify="start">
 				<NavbarBrand as="li" className="gap-3 max-w-fit">
 					<NextLink className="flex justify-start items-center gap-1" href="/">
-						<Logo />
+						<img src={Logo.src} alt="Logo" width={24} height={24}/>
 						<p className="font-bold text-inherit">CROPPY DEALS</p>
 					</NextLink>
 				</NavbarBrand>
