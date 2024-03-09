@@ -54,7 +54,7 @@ export default function RootLayout({
 								<span className="text-default-600">Powered by</span>
 								<p className="text-primary">NextUI</p>
 							</Link> */}
-							<span>footer</span>
+							<span>Croppy Deals</span>
 						</footer>
 					</div>
 				</Providers>

@@ -58,7 +58,7 @@ export default function Auth({ red }: { red: string }) {
                         className="my-auto mr-3 font-white"
                         suppressHydrationWarning
                     >
-                        <Avatar src={user.photoURL} />
+                        <Avatar src={user.photoURL!} />
                     </p>
                     <button
                         onClick={logout}
