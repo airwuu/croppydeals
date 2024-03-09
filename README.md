@@ -1,4 +1,4 @@
-# hackmercedix
+# Croppy Deals
 
 -Website for San Joaquin Valley
 Problem: Farmers having a difficult time selling their goods/ replace contracts with wholesales?
