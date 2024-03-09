@@ -18,7 +18,6 @@ import { siteConfig } from "@/config/site";
 import NextLink from "next/link";
 import clsx from "clsx";
 
-import { ThemeSwitch } from "@/components/theme-switch";
 import {
 	TwitterIcon,
 	GithubIcon,
@@ -102,7 +101,7 @@ export const Navbar = () => {
 				</NavbarItem>
 				<NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem> */}
 				<NavbarItem className="hidden md:flex">
-					<Auth red/>
+					<Auth red="/marketplace"/>
 			{/*		<Button */}
             {/*isExternal*/}
 			{/*			as={Link}*/}
