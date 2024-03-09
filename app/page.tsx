@@ -34,7 +34,7 @@ export default function Home() {
 				</div>
 				<div className="pt-20"/>
 			</section>
-			<section id="about" className="flex flex-col gap-8 items-center">
+			<section id="about" className="flex flex-col gap-8 items-center ">
 				<div>
 					<h1 className={title()}>a bout</h1>
 				</div>
