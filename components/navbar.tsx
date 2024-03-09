@@ -29,6 +29,12 @@ import {
 
 import { Logo } from "@/components/icons";
 
+import dynamic from "next/dynamic";
+import { useAuthState } from "react-firebase-hooks/auth";
+const Auth = dynamic(() => import("./login"), {
+    ssr: false,
+});
+
 export const Navbar = () => {
 	// const searchInput = (
 	// 	<Input
@@ -96,16 +102,17 @@ export const Navbar = () => {
 				</NavbarItem>
 				<NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem> */}
 				<NavbarItem className="hidden md:flex">
-					<Button 
-            isExternal
-						as={Link}
-						className="text-sm font-normal text-de	fault-600 bg-default-100"
-						href={siteConfig.links.login}
-						// startContent={<HeartFilledIcon className="text-danger" />}
-						variant="solid"
-					>
-						👤Login
-					</Button>
+					<Auth red/>
+			{/*		<Button */}
+            {/*isExternal*/}
+			{/*			as={Link}*/}
+			{/*			className="text-sm font-normal text-de	fault-600 bg-default-100"*/}
+			{/*			href={siteConfig.links.login}*/}
+			{/*			// startContent={<HeartFilledIcon className="text-danger" />}*/}
+			{/*			variant="solid"*/}
+			{/*		>*/}
+			{/*			👤Login*/}
+			{/*		</Button>*/}
 				</NavbarItem>
 			</NavbarContent>
 		</NextUINavbar>
