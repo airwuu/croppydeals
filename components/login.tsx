@@ -10,6 +10,7 @@ import {
 import { useAuthState } from "react-firebase-hooks/auth";
 import { setDoc, doc } from "firebase/firestore";
 import { useRouter } from "next/navigation";
+import { Avatar } from "@nextui-org/react";
 
 export default function Auth({ red }: { red: string }) {
     const [user] = useAuthState(auth);
@@ -54,10 +55,10 @@ export default function Auth({ red }: { red: string }) {
             {user ? (
                 <>
                     <p
-                        className="my-auto mr-1 font-white"
+                        className="my-auto mr-3 font-white"
                         suppressHydrationWarning
                     >
-                        Welcome, <b>{user.email}</b>
+                        <Avatar src={user.photoURL} />
                     </p>
                     <button
                         onClick={logout}
@@ -72,7 +73,7 @@ export default function Auth({ red }: { red: string }) {
                         className="px-4 py-2 font-semibold bg-transparent border border-blue-500 rounded hover:bg-blue-950 font-white hover:text-white hover:border-transparent"
                         onClick={signInWithGoogle}
                     >
-                        Sign In With Google
+                        Login
                     </button>
                 </>
             )}
