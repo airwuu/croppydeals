@@ -88,7 +88,7 @@ export default function Home() {
 							{"Simply make an account and verify your information! Once your info has been verified, you can begin to list your produce. "}
 						</AccordionItem> 
 						<AccordionItem key="2" aria-label="Is my data safe?" title="Is my data safe?">
-							{"No, we will sell it. That's how we remain free to use. "}
+							{"Yes, we ensure that your data is secure and safe. All while we remain free to use. "}
 						</AccordionItem>
 						<AccordionItem key="3" aria-label="Can I use cryptocurrency as a method of payment?" title="Can I use cryptocurrency as a method of payment?">
 							{"Yes, we accept Bitcoin, Ethereum, and Dogecoin. "}
