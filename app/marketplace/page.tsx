@@ -1,10 +1,20 @@
 'use client';
+import React, { useState, useEffect } from 'react';
 import { title } from "@/components/primitives";
 import {Autocomplete, AutocompleteItem, Select, SelectItem, Button} from "@nextui-org/react";
-import {produce, categories} from "./data";
+import {produce, categories, ProduceItem } from "./data";
 import ProduceCards from "./components/produceCards";
 
 export default function DocsPage() {
+    const [produceData, setProduceData] = useState<ProduceItem[]>([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const data = await produce;
+            setProduceData(data);
+        };
+    }, []);
+
 	return (
 		<div>
 			<div>
@@ -13,12 +23,12 @@ export default function DocsPage() {
 			<section className="search flex flex-row justify-center items-center w-full pt-10 gap-5">
 				<Autocomplete 
 					allowsCustomValue
-					label="Search for produce" 
+					label="Search for produce"
 					variant="bordered"
 					className="max-w-1/2 w-1/2" 
-					defaultItems={produce}
+					defaultItems={produceData}
 					>
-					{(item) => <AutocompleteItem key={item.value}>{item.label}</AutocompleteItem>}
+					{(item) => <AutocompleteItem key={item.item2}>{item.item}</AutocompleteItem>}
 				</Autocomplete>
 
 				<Select
