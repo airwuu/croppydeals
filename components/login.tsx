@@ -7,6 +7,7 @@ import {
     signOut,
     UserCredential,
     AdditionalUserInfo,
+    signInWithRedirect,
 } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { setDoc, doc } from "firebase/firestore";
@@ -35,7 +36,7 @@ export default function Auth({ red }: { red: string }) {
 
     const signInWithGoogle = async () => {
         try {
-            const result = await signInWithPopup(auth, googleProvider);
+            const result = await signInWithRedirect(auth, googleProvider);
             await createUserObjectIfNotExists(result);
             router.push(red);
         } catch (err) {
