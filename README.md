@@ -1,4 +1,5 @@
 # Croppy Deals
+![image](https://github.com/airhornwho/croppydeals/assets/77591592/35e8d01f-39a5-46f8-b094-815e485770ca)
 A produce marketplace to nurture hope and opportunity in communities around the valley.
 
 ## Problems we have found in our local farms:
