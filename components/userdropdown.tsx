@@ -1,5 +1,5 @@
 import React from 'react'
-import {Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Avatar, User} from "@nextui-org/react";
+import {Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, User} from "@nextui-org/react";
 
 const Userdropdown = (data: any) => {
   return (
@@ -22,10 +22,10 @@ const Userdropdown = (data: any) => {
             <p className="font-bold">Signed in as</p>
             <p className="font-bold">{data.name}</p>
           </DropdownItem>
-          <DropdownItem key="settings">Settings</DropdownItem>
+          <DropdownItem key="dashboard" href="/dashboard">Dashboard</DropdownItem>
           <DropdownItem key="history">History</DropdownItem>
-          <DropdownItem key="analytics">Analytics</DropdownItem>
           <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
+          <DropdownItem key="settings">Settings</DropdownItem>
           <DropdownItem key="logout" color="danger" onClick={data.logout}>Log Out</DropdownItem>
         </DropdownMenu>
       </Dropdown>

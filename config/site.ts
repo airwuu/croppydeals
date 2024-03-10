@@ -8,10 +8,14 @@ export const siteConfig = {
 			label: "Home",
 			href: "/",
 		},
-    {
-      label: "Marketplace",
-      href: "/marketplace",
-    }
+		{
+		label: "Marketplace",
+		href: "/marketplace",
+		},
+		{
+			label: "Dashboard",
+			href: "/dashboard",
+		}
 	],
 	homeItems: [
 		{
