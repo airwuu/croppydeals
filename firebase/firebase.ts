@@ -2,6 +2,9 @@ import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
+import firebase from "firebase/compat/app";
+import "firebase/compat/firestore";
+
 const firebaseConfig = {
   apiKey: "AIzaSyAyKRWdc9YiLI-wo5StPUSsDVavMkn1fgY",
   authDomain: "hackmercedix.firebaseapp.com",
@@ -17,3 +20,4 @@ const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
 export const firestore = getFirestore(app);
+export const serverStamp = firebase.firestore.Timestamp
