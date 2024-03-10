@@ -13,6 +13,7 @@ export default function DocsPage() {
             const data = await produce;
             setProduceData(data);
         };
+		void fetchData();
     }, []);
 
 	return (
@@ -28,7 +29,7 @@ export default function DocsPage() {
 					className="max-w-1/2 w-1/2" 
 					defaultItems={produceData}
 					>
-					{(item) => <AutocompleteItem key={item.item2}>{item.item}</AutocompleteItem>}
+					{(item) => <AutocompleteItem key={item.item}>{item.item}</AutocompleteItem>}
 				</Autocomplete>
 
 				<Select

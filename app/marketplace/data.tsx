@@ -4,7 +4,7 @@ import { getDocs, collection } from "firebase/firestore";
 
 export interface ProduceItem {
     item: string;
-    item2: string;
+    price: number;
     desc: string;
 }
 
@@ -14,8 +14,8 @@ const getData = async (): Promise<ProduceItem[]> => {
     const produce: ProduceItem[] = [];
 
     snap.forEach((doc) => {
-        const { item, item2, desc } = doc.data();
-        produce.push({ item, item2, desc });
+        const { item, price, desc } = doc.data();
+        produce.push({ item, price, desc });
     });
 
     return produce;
