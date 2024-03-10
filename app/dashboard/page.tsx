@@ -5,7 +5,8 @@ import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure,
 import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 import { collection, getDocs, doc, updateDoc, addDoc } from "firebase/firestore";
-import { firestore, serverStamp } from '../../firebase/firebase';
+import { firestore, serverStamp, auth } from '../../firebase/firebase';
+import { useAuthState } from "react-firebase-hooks/auth";
 
 const data = [
 	{
@@ -55,6 +56,7 @@ const data = [
 
 export default function DocsPage() {
 	const {isOpen, onOpen, onOpenChange} = useDisclosure();
+	const [user] = useAuthState(auth);
 	return (
 		<div>
 			<div className="pb-10">
@@ -101,7 +103,8 @@ export default function DocsPage() {
 						<div className="flex flex-col justify-center">
 							<h1 className="text-2xl  pb-3 text-left font-bold">ACTIONS</h1>
 							<div className="flex flex-row gap-3">
-								<Button color="success" onPress={onOpen}>Sell something!</Button>
+								{user? <><Button color="success" onPress={onOpen} >Sell something!</Button> <Button color="primary"  >Edit posts</Button></>:<><Button isDisabled color="success" onPress={onOpen} >Sell something!</Button><Button isDisabled color="primary"  >Edit posts</Button></>}
+								
 							</div>
 						</div>
 					</div>
