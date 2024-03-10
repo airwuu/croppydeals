@@ -55,7 +55,7 @@ const ProduceCards = () => {
                     shadow="sm"
                     radius="lg"
                     width="100%"
-                    alt={item.title}
+                    // alt={item.title}
                     className="w-full object-cover h-[140px]"
                     src={item.img}
                     />
