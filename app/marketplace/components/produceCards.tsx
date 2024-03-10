@@ -7,6 +7,7 @@ interface ProduceItem {
   item: string;
   img: string;
   price: number;
+  desc: string;
 }
 
 const ProduceCards = () => {
@@ -26,9 +27,10 @@ const ProduceCards = () => {
       <div className="cards flex flex-row justify-start flex-wrap gap-5 max-w-7xl pt-9">
         {produceList.map((item, index) => (
           <PCard
-            title={item.item}
+            item={item.item}
             img={item.img}
             price={item.price}
+            desc={item.desc}
             key={index}
           ></PCard>
         ))}
