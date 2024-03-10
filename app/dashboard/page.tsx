@@ -1,6 +1,7 @@
 'use client';
 import { title } from "@/components/primitives";
 import { Button } from "@nextui-org/react";
+import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure, Input, Textarea} from "@nextui-org/react";
 import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 const data = [
 	{
@@ -49,6 +50,7 @@ const data = [
 
 
 export default function DocsPage() {
+	const {isOpen, onOpen, onOpenChange} = useDisclosure();	
 	return (
 		<div>
 			<div className="pb-10">
@@ -57,9 +59,9 @@ export default function DocsPage() {
 			<section>
 				<div className="grid grid-cols-5 grid-rows-5 gap-4">
 					<div className="col-span-3 row-span-2 col-start-3 row-start-4 bg-gray-100 rounded-lg p-6">
-						control monthly stats
+						control your items
 						<div className="flex flex-row gap-3">
-							idkidkidk
+							
 						</div>
 					</div>
 					<div className="col-span-3 row-span-3 col-start-3 row-start-1 bg-gray-100 rounded-lg p-6">
@@ -85,9 +87,9 @@ export default function DocsPage() {
 								<Bar dataKey="revenue" fill="#82ca9d" />
 							</BarChart>
 							<div className="flex flex-row gap-3">
-								<Button>Sell</Button>
-								<Button></Button>
-								<Button></Button>
+								<Button>Monthly</Button>
+								<Button>Yearly</Button>
+								<Button>Lifetime</Button>
 							</div>
 						</div>
 					</div>
@@ -95,9 +97,7 @@ export default function DocsPage() {
 						<div className="flex flex-col justify-center">
 							<h1 className="text-2xl  pb-3 text-left font-bold">ACTIONS</h1>
 							<div className="flex flex-row gap-3">
-								<Button>Sell</Button>
-								<Button></Button>
-								<Button></Button>
+								<Button color="success" onPress={onOpen}>Sell something!</Button>
 							</div>
 						</div>
 					</div>
@@ -122,6 +122,42 @@ export default function DocsPage() {
 				</div>
 					
 			</section>
+			<Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+        <ModalContent>
+          {(onClose) => (
+            <>
+              <ModalHeader className="flex flex-col gap-1">Modal Title</ModalHeader>
+              <ModalBody>
+				<div className="flex gap-3">
+				<Input type="name" label="Item Name" />
+				<Input type="number" label="price" className="w-1/3"/>
+				</div>
+                
+				<Textarea
+      label="Description"
+      placeholder="Enter your description"
+
+    />
+	<Input type="url" label="image url"
+	startContent={
+		<div className="pointer-events-none flex items-center">
+		  <span className="text-default-400 text-small">https://</span>
 		</div>
+	  }/>
+              </ModalBody>
+              <ModalFooter>
+                <Button color="danger" variant="light" onPress={onClose}>
+                  Close
+                </Button>
+                <Button color="success" onPress={onClose}>
+                  Submit
+                </Button>
+              </ModalFooter>
+            </>
+          )}
+        </ModalContent>
+      </Modal>
+		</div>
+		
 	);
 }

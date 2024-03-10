@@ -52,8 +52,8 @@ const PCard = (data: { key: React.Key | null | undefined; item: string | number 
                   <Button color="danger" variant="light" onPress={onClose}>
                     Close
                   </Button>
-                  <Button color="primary" onPress={onClose}>
-                    Action
+                  <Button color="success" onPress={onClose}>
+                    Add to Cart
                   </Button>
                 </ModalFooter>
               </>
