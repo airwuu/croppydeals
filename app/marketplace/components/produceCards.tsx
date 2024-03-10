@@ -4,9 +4,9 @@ import { firestore } from '../../../firebase/firebase';
 import PCard from './card';
 
 interface ProduceItem {
-  title: string;
+  item: string;
   img: string;
-  price: string;
+  price: number;
 }
 
 const ProduceCards = () => {
@@ -18,6 +18,7 @@ const ProduceCards = () => {
       const data = querySnapshot.docs.map(doc => doc.data() as ProduceItem);
       setProduceList(data);
     };
+    void fetchProduceData();
   }, []);
 
   return (
