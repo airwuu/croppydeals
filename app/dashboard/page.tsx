@@ -3,6 +3,10 @@ import { title } from "@/components/primitives";
 import { Button } from "@nextui-org/react";
 import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure, Input, Textarea} from "@nextui-org/react";
 import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+
+import { collection, getDocs, doc, updateDoc, addDoc } from "firebase/firestore";
+import { firestore, serverStamp } from '../../firebase/firebase';
+
 const data = [
 	{
 	  name: 'Strawberry',
@@ -50,7 +54,7 @@ const data = [
 
 
 export default function DocsPage() {
-	const {isOpen, onOpen, onOpenChange} = useDisclosure();	
+	const {isOpen, onOpen, onOpenChange} = useDisclosure();
 	return (
 		<div>
 			<div className="pb-10">
@@ -61,7 +65,7 @@ export default function DocsPage() {
 					<div className="col-span-3 row-span-2 col-start-3 row-start-4 bg-gray-100 rounded-lg p-6">
 						control your items
 						<div className="flex flex-row gap-3">
-							
+
 						</div>
 					</div>
 					<div className="col-span-3 row-span-3 col-start-3 row-start-1 bg-gray-100 rounded-lg p-6">
@@ -117,22 +121,22 @@ export default function DocsPage() {
 								<h2>Yearly Earnings (2024):</h2>
 								<p>{"$"+10128392}</p>
 							</div>
-						</div>	
+						</div>
 					</div>
 				</div>
-					
+
 			</section>
 			<Modal isOpen={isOpen} onOpenChange={onOpenChange}>
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader className="flex flex-col gap-1">Modal Title</ModalHeader>
+              <ModalHeader className="flex flex-col gap-1">Sell Produce!</ModalHeader>
               <ModalBody>
 				<div className="flex gap-3">
 				<Input type="name" label="Item Name" />
 				<Input type="number" label="price" className="w-1/3"/>
 				</div>
-                
+
 				<Textarea
       label="Description"
       placeholder="Enter your description"
@@ -149,15 +153,47 @@ export default function DocsPage() {
                 <Button color="danger" variant="light" onPress={onClose}>
                   Close
                 </Button>
-                <Button color="success" onPress={onClose}>
-                  Submit
-                </Button>
+                <Button
+            		color="success"
+            		onPress={async () => {
+						  // Get the values from the form fields
+						  const itemNameInput = document.querySelector<HTMLInputElement>('input[type="name"]');
+						  const priceInput = document.querySelector<HTMLInputElement>('input[type="number"]');
+						  const descriptionInput = document.querySelector<HTMLTextAreaElement>('textarea');
+						  const imageUrlInput = document.querySelector<HTMLInputElement>('input[type="url"]');
+
+						  if (!itemNameInput || !priceInput || !descriptionInput || !imageUrlInput) {
+							console.error('Form field not found');
+							return;
+						  }
+
+						  const itemName = itemNameInput.value;
+						  const price = parseFloat(priceInput.value);
+						  const description = descriptionInput.value;
+						  const imageUrl = imageUrlInput.value;
+
+						  // Add a new document with the form field values to the "produce" collection
+						  await addDoc(collection(firestore, 'produce'), {
+							  item: itemName,
+							  price: price,
+							  desc: description,
+							  img: imageUrl,
+							  amt: 1,
+							  date: serverStamp.now(),
+						  });
+
+						// Close the modal
+						onClose();
+					}}
+          		>
+            	Submit
+				</Button>
               </ModalFooter>
             </>
           )}
         </ModalContent>
       </Modal>
 		</div>
-		
+
 	);
 }
