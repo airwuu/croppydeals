@@ -1,4 +1,5 @@
 "use client";
+import Userdropdown from "./userdropdown";
 import { auth, googleProvider, firestore } from "@/firebase/firebase";
 import {
     signInWithPopup,
@@ -52,7 +53,7 @@ export default function Auth({ red }: { red: string }) {
 
     return (
         <div className="flex" suppressHydrationWarning>
-            {user ? (
+            {/* {user ? (
                 <>
                     <p
                         className="my-auto mr-3 font-white"
@@ -67,6 +68,25 @@ export default function Auth({ red }: { red: string }) {
                         Logout
                     </button>
                 </>
+            ) : (
+                <>
+                    <button
+                        className="px-4 py-2 font-semibold bg-transparent border border-blue-500 rounded hover:bg-blue-950 font-white hover:text-white hover:border-transparent"
+                        onClick={signInWithGoogle}
+                    >
+                        Login
+                    </button>
+                </>
+            )} */}
+            {user ? (
+                <div className="flex flex-row gap-3">
+                    <button
+                        className="bg-transparent hover:bg-blue-950 font-white font-semibold hover:text-white py-1.5 px-4 border border-blue-500 hover:border-transparent rounded"
+                    >
+                        Cart
+                    </button>
+                    <Userdropdown img={user.photoURL!} email={user.email!} name={user.displayName} logout={logout}/>
+                </div>
             ) : (
                 <>
                     <button
