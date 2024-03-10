@@ -2,7 +2,7 @@
 import { title } from "@/components/primitives";
 import {Autocomplete, AutocompleteItem, Select, SelectItem, Button} from "@nextui-org/react";
 import {produce, categories} from "./data";
-import ProduceCards from "./cards";
+import ProduceCards from "./components/produceCards";
 
 export default function DocsPage() {
 	return (
