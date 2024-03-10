@@ -91,7 +91,7 @@ export default function Home() {
 							{"Yes, we ensure that your data is secure and safe. All while we remain free to use. "}
 						</AccordionItem>
 						<AccordionItem key="3" aria-label="Can I use cryptocurrency as a method of payment?" title="Can I use cryptocurrency as a method of payment?">
-							{"Yes, we accept Bitcoin, Ethereum, and Dogecoin. "}
+							{"Yes, we accept Flow tokens."}
 						</AccordionItem>
 					</Accordion>
 				</div>	
