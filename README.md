@@ -11,5 +11,6 @@ A produce marketplace to nurture hope and opportunity in communities around the 
 - Decrease Emissions, pollutions, and waste coming from distant transportation and packaging
 
 # Screenshot of Marketplace Website:
-![image](https://github.com/airhornwho/croppydeals/assets/77591592/c01a5135-0f0e-482a-bfbe-60d0c2513a64)
+![image](https://github.com/airhornwho/croppydeals/assets/77591592/de12123c-6d76-4eb7-b548-b603fd8e476c)
+
 
