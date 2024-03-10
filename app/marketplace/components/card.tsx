@@ -7,7 +7,7 @@ const PCard = (data: { key: React.Key | null | undefined; item: string | number 
     return (
       <>
         {/* <Button onPress={onOpen}>{data.title}</Button> */}
-        <Card className=" w-44" shadow="sm" key={data.key} isPressable onPress={onOpen}>
+        <Card className=" w-44" shadow="sm" key={data.key} isPressable isHoverable onPress={onOpen}>
             <CardBody className="overflow-visible p-0">
                 <Image
                 shadow="sm"
@@ -18,9 +18,9 @@ const PCard = (data: { key: React.Key | null | undefined; item: string | number 
                 src={data.img}
                 />
             </CardBody>
-            <CardFooter className="text-small justify-between">
+            <CardFooter className="text-small justify-between flex-wrap">
                 <b>{data.item}</b>
-                <p className="text-default-500">{data.price}</p>
+                <p className="text-default-500">{"💸"+data.price}</p>
             </CardFooter>
         </Card>
         <Modal isOpen={isOpen} onOpenChange={onOpenChange}>

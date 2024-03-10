@@ -104,7 +104,6 @@ export default function DocsPage() {
 							<h1 className="text-2xl  pb-3 text-left font-bold">ACTIONS</h1>
 							<div className="flex flex-row gap-3">
 								{user? <><Button color="success" onPress={onOpen} >Sell something!</Button> <Button color="primary"  >Edit posts</Button></>:<><Button isDisabled color="success" onPress={onOpen} >Sell something!</Button><Button isDisabled color="primary"  >Edit posts</Button></>}
-								
 							</div>
 						</div>
 					</div>
