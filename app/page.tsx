@@ -35,9 +35,12 @@ export default function Home() {
 				</div>
 				<div className="pt-20"/>
 			</section>
-			<section id="about" className="flex flex-col gap-8 items-center snap-center">
+			<section className="p-10">
+
+			</section>
+			<section id="about" className="flex flex-col gap-8 items-center snap-center pt-20">
 				<div>
-					<h1 className={title()}><a className="font-extrabold">Our Mission</a></h1>
+					<h1 className={title({size:"lg"})}><a className="font-bold">Our Mission</a></h1>
 				</div>
 				<div>
 					<p className="text-center">
@@ -46,36 +49,40 @@ export default function Home() {
 					</p>
 					<br></br>
 				</div>
-				<div>
-				<h1 className={title()}>The <a className="font-extrabold text-rose-500">Issue</a> We Want to Address:</h1>
-				</div>
-				<div>
-					<ul className="list-disc">
-						<li>The San Joaquin Valley is extremely vulnerable to <a className="font-bold underline decoration-red-500">Climate Change</a> and <a className="font-bold underline decoration-red-500">Food Insecurity</a><br></br></li>
-						<li><a className="font-bold underline decoration-red-500">Corporate</a> and <a className="font-bold underline decoration-red-500">Contract Farming</a> has had a negative on our farmers, environment, and citizens</li>
-						<li>Food, space, labor, and many other <a className="font-bold underline decoration-red-500">Resources are Scarce</a></li>
-					</ul>
-					<br></br>
-				</div>
-				<div>
-					<h1 className={title()}>What We Will to <a className = "font-extrabold text-green-800">Accomplish</a></h1>
+				<div className="flex gap-3 pl-20 pr-20 pb-5">
+					<div className="flex flex-col gap-3">
+						<div>
+						<h1 className={title()}>The <a className="font-extrabold text-rose-500">Issue</a> We Want to Address:</h1>
+						</div>
+						<div>
+							<ul className="list-disc">
+								<li>The San Joaquin Valley is extremely vulnerable to <a className="font-bold underline decoration-red-500">Climate Change</a> and <a className="font-bold underline decoration-red-500">Food Insecurity</a><br></br></li>
+								<li><a className="font-bold underline decoration-red-500">Corporate</a> and <a className="font-bold underline decoration-red-500">Contract Farming</a> has had a negative on our farmers, environment, and citizens</li>
+								<li>Food, space, labor, and many other <a className="font-bold underline decoration-red-500">Resources are Scarce</a></li>
+							</ul>
+							<br></br>
+						</div>
+					</div>
+					<div className="flex flex-col gap-3">
+						<div>
+							<h1 className={title()}>What We Will to <a className = "font-extrabold text-green-400">Accomplish</a></h1>
+						</div>
+						<div>
+							{/* <p className="text-semibold">We will:</p> */}
+							<ul className="list-disc">
+								<li><a className="font-bold underline decoration-green-500">Break the Barriers</a> that block access to affordable and healthy food</li>
+								<li><a className="font-bold underline decoration-green-500">Connect People</a> with local producers, promoting sustainable farming</li>
+								<li><a className="font-bold underline decoration-green-500">Decrease Emissions</a>, pollutions, and waste coming from distant transportation and packaging</li>
+							</ul>
+						</div>
+					</div>
 					
-				</div>
-				<div>
-					{/* <p className="text-semibold">We will:</p> */}
-					<ul className="list-disc">
-						<li><a className="font-bold underline decoration-green-500">Break the Barriers</a> that block access to affordable and healthy food</li>
-						<li><a className="font-bold underline decoration-green-500">Connect People</a> with local producers, promoting sustainable farming</li>
-						<li><a className="font-bold underline decoration-green-500">Decrease Emissions</a>, pollutions, and waste coming from distant transportation and packaging</li>
-					</ul>
-					<br></br>
-					<br></br>
-					<br></br>
+					
 				</div>
 			</section>
 			<section className="flex flex-col gap-8 items-center pt-20">
 				<h1 className={title()}>Frequently Asked Questions</h1>
-				<div className="w-3/4">
+				<div className="w-3/4 h-96">
 					<Accordion selectionMode="multiple" variant="splitted">
 						<AccordionItem key="1" aria-label="How can I start selling?" title="How can I start selling?">
 							{"Simply make an account and verify your information! Once your info has been verified, you can begin to list your produce. "}
@@ -88,6 +95,9 @@ export default function Home() {
 						</AccordionItem>
 					</Accordion>
 				</div>	
+			</section>
+			<section className="p-10">
+
 			</section>
 		</>
 	);
